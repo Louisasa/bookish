@@ -1,0 +1,11 @@
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.csprojAssemblyReference.cache
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.csproj.CoreCompileInputs.cache
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookishApp.exe.config
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookishApp.exe
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookishApp.pdb
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\Dapper.dll
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\Dapper.xml
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.csproj.CopyComplete
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.exe
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.pdb
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\secret.config

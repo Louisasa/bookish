@@ -37,6 +37,7 @@
       <HintPath>..\packages\Dapper.2.0.4\lib\netstandard2.0\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,7 +51,9 @@
     <Compile Include="Book.cs" />
     <Compile Include="Author.cs" />
     <Compile Include="Books-Authors.cs" />
-    <None Include="secret.config" />
+    <None Include="secret.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Compile Include="CheckOuts.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Program.cs" />
