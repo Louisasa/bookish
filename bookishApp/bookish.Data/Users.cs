@@ -1,6 +1,6 @@
 ﻿namespace bookish.Data
 {
-    class Users
+    public class Users
     {
         public int ID { get; set; }
         public string UserName { get; set; }

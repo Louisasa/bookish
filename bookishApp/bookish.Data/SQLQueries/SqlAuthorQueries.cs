@@ -30,6 +30,10 @@ namespace bookish.Data.SQLQueries
         {
             throw new System.NotImplementedException();
         }
+        public List<BooksAuthors> GetBookIDByAuthorName(string name)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public List<Author> GetAuthorNameByAuthorID(string name)
         {
