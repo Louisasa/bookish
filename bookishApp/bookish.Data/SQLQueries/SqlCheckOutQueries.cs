@@ -18,12 +18,12 @@ namespace bookish.Data.SQLQueries
             this.connectionString = connectionString;
         }
 
-        public List<CheckOuts> GetCheckOutsByBookID(int name)
+        public List<CheckOutsBooks> GetCheckOutsByBookID(int name)
         {
             using (var db = new SqlConnection(connectionString))
             {
-                string sqlString = "SELECT * FROM dbo.CheckOuts WHERE[BookID] = @id AND [BeenReturned] = 0; ";
-                return (List<CheckOuts>)db.Query<CheckOuts>(sqlString, new { id = name });
+                string sqlString = "SELECT u.UserName, c.DueDate, b.BookCopies, b.BookName, c.ID, c.BeenReturned, c.UserID, c.BookID FROM dbo.Books b, dbo.CheckOuts c Join dbo.Users u on c.UserID = u.ID WHERE[BookID] = @id and c.BeenReturned = 0 and b.ID = c.BookID; ";
+                return (List<CheckOutsBooks>)db.Query<CheckOutsBooks>(sqlString, new { id = name });
             }
         }
 
