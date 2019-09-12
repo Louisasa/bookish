@@ -1,9 +1,9 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using bookish.Data.Interfaces;
+using Dapper;
 
 namespace bookish.Data.SQLQueries
 {
@@ -30,14 +30,10 @@ namespace bookish.Data.SQLQueries
         {
             throw new System.NotImplementedException();
         }
-        public List<BooksAuthors> GetBookIDByAuthorName(string name)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public List<Author> GetAuthorNameByAuthorID(string name)
+        public List<Author> GetAuthorNameByAuthorID(int id)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

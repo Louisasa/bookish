@@ -35,6 +35,19 @@ namespace bookish.Data.SQLQueries
                 return (List<Book>)db.Query<Book>(sqlString);
             }
         }
+        public List<BooksAuthors> GetBooksByAuthorName(string name)
+        {
+            using (var db = new SqlConnection(connectionString))
+            {
+                //string sqlString = "SELECT Id, AuthorName FROM [bookish].[dbo].[Authors] WHERE AuthorName = @authorName";
+                //db.Query<Author>(sqlString , new { authorName = name});
+                string searchString =
+                    "SELECT AuthorName, BookId FROM [bookish].[dbo].[Authors] a INNER JOIN [bookish].[dbo].[BooksAuthors] ba ON a.AuthorId = ba.AuthorId WHERE a.AuthorName = @authorBane";
+                string searchone = "SELECT BookName, AuthorName FROM table1 INNER JOIN [bookish].[dbo].[BooksAuthors]";
+
+                return (List<BooksAuthors>)db.Query<Book>(searchString, new { authorName = name });
+            }
+        }
 
         public int AddNewBook(Book name)
         {

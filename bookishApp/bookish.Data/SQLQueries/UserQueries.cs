@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using bookish.Data.Interfaces;
 
 namespace bookish.Data.SQLQueries
 {
-    class UserQueries
+    class UserQueries : IUserQueries
     {
         private readonly string connectionString;
 
