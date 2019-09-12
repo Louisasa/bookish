@@ -50,10 +50,12 @@
     <Compile Include="BooksAuthors.cs" />
     <Compile Include="CheckOuts.cs" />
     <Compile Include="Interfaces\IAuthorQueries .cs" />
+    <Compile Include="Interfaces\ICheckOutQueries.cs" />
     <Compile Include="Interfaces\IBookQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries.cs" />
     <Compile Include="SQLQueries\SqlAuthorQueries.cs" />
+    <Compile Include="SQLQueries\SqlCheckOutQueries.cs" />
     <Compile Include="SQLQueries\SqlBookQueries.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>

@@ -13,11 +13,13 @@ namespace bookish.web.Controllers
         public ActionResult BookInfoPage(string id)
         {
             ViewBag.Message = "Book stuff";
-            var queries = Queries.SetConnectionString();
+            var bookQueries = Queries.SetConnectionStringForBooks();
+            var checkOutQueries = Queries.SetConnectionStringForCheckOuts();
 
-            var bookInfo = queries.GetBooksByName(id);
+            var bookInfo = bookQueries.GetBooksByName(id);
+            var checkOutInfo = checkOutQueries.GetCheckOutsByBookID(bookInfo[0].ID);
 
-            return View(bookInfo);
+            return View(checkOutInfo);
         }
     }
 }

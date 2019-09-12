@@ -10,9 +10,14 @@ namespace bookish.Data
 {
     public static class Queries
     {
-        public static IBookQueries SetConnectionString()
+        public static IBookQueries SetConnectionStringForBooks()
         {
             return new SqlBookQueries(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString);
+        }
+
+        public static ICheckOutQueries SetConnectionStringForCheckOuts()
+        {
+            return new SqlCheckOutQueries(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString);
         }
     }
 }
