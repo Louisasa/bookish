@@ -1,13 +1,12 @@
 ﻿using System;
+using bookish.web.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using WebApplication1.Models;
 
-namespace WebApplication1
+namespace bookish.web
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApplication1.Models
+namespace bookish.web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace WebApplication1.Controllers
+namespace bookish.web.Controllers
 {
     public class HomeController : Controller
     {
@@ -20,9 +16,9 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Catalogue()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your catalogue page.";
 
             return View();
         }
