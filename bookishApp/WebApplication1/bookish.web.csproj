@@ -235,6 +235,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="secret.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -251,6 +254,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bookish.Data\bookish.Data.csproj">
+      <Project>{d8e1c7db-b355-4095-a5fc-88895dd3681d}</Project>
+      <Name>bookish.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bookishApp\bookishApp.csproj">
+      <Project>{0bf614c3-20cd-428d-af85-710a32a098d9}</Project>
+      <Name>bookishApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
