@@ -20,16 +20,11 @@ namespace bookish.web.Controllers
         public ActionResult Catalogue()
         {
             //todo: add author
-            var queries = Queries.SetConnectionString();
+            var queries = Queries.SetConnectionStringForBooks();
 
             var books = queries.GetAllBooks();
 
             return View(books);
-        }
-
-        public ActionResult BookInfoPage(object bookname)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
