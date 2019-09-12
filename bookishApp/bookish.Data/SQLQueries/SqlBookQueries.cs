@@ -39,13 +39,12 @@ namespace bookish.Data.SQLQueries
         {
             using (var db = new SqlConnection(connectionString))
             {
-                var searchOne = "SELECT AuthorName, BookId FROM [bookish].[dbo].[Authors] a INNER JOIN [bookish].[dbo].[BooksAuthors] ba ON a.AuthorId = ba.AuthorId WHERE a.AuthorName = @authorBane";
-                var searchTwo = $"SELECT BookName FROM ({searchOne}) d INNER JOIN [bookish].[dbo].[Books] b ON d.BookId = ba.BookId";
-                var authorWork = new AuthorsWorks
+                var searchOne = "SELECT AuthorName, BookId FROM [dbo].[Authors] a INNER JOIN [dbo].[Books-Authors] ba ON a.ID = ba.authorID WHERE a.AuthorName = @authorName";
+                var searchTwo = $"SELECT Id, BookName, ISBN, BookCopies FROM ({searchOne}) d INNER JOIN [dbo].[Books] b ON d.BookId = b.Id";
+                return new AuthorsWorks
                 {
-                    AuthorName = name, Books = db.Query<Book>(searchOne, new {authorName = name}).ToList()
+                    AuthorName = name, Books = db.Query<Book>(searchTwo, new {authorName = name}).ToList()
                 };
-                return authorWork;
             }
         }
 

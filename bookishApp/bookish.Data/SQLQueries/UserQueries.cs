@@ -7,6 +7,13 @@ using bookish.Data.Interfaces;
 
 namespace bookish.Data.SQLQueries
 {
+    public interface IUserQueries
+    {
+        List<Book> GetBooksByUserID(string name);
+        List<Users> GetUserIDByLogin(string name);
+        List<Users> GetUsernameByBook(string name);
+    }
+
     class UserQueries : IUserQueries
     {
         private readonly string connectionString;
