@@ -11,5 +11,11 @@ FROM [bookish].[dbo].[Books]
 ORDER BY [BookName] ASC-->
 
 <div>
-    @bookish.Data.Queries.QueryBooks("*","","ORDER BY [BookName] ASC");
+    @{
+        foreach (var book in bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC"))
+        {
+            book.ToString();
+        }
+        
+    }
 </div>
