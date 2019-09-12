@@ -9,7 +9,7 @@ namespace bookish.Data.Interfaces
     public interface IBookQueries
     {
         List<Book> GetBooksByName(string name);
-        List<Book> GetAllBooks(string name);
+        List<Book> GetAllBooks();
         int AddNewBook(Book name);
     }
 }

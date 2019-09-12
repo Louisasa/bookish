@@ -8,8 +8,8 @@
 </div>
 
 <ul>
-    @foreach (var book in ViewBag.data)
+    @foreach (var book in Model)
     {
-        <li>@book.AuthorID</li>
+        <li>@book</li>
     }
 </ul>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using bookish.Data;
+using bookish.Data.Interfaces;
 
 namespace bookish.web.Controllers
 {
@@ -12,10 +13,11 @@ namespace bookish.web.Controllers
         public ActionResult BookInfoPage(string id)
         {
             ViewBag.Message = "Book stuff";
-            var queries  = Queries.GetBookQueries();
-            //queries.GetBooksByName();
+            var queries = Queries.SetConnectionString();
 
-            return View();
+            var bookInfo = queries.GetBooksByName(id);
+
+            return View(bookInfo);
         }
     }
 }

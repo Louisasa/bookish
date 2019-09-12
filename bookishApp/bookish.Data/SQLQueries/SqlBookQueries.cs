@@ -27,9 +27,13 @@ namespace bookish.Data.SQLQueries
             }
         }
 
-        public List<Book> GetAllBooks(string name)
+        public List<Book> GetAllBooks()
         {
-            throw new System.NotImplementedException();
+            using (var db = new SqlConnection(connectionString))
+            {
+                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books]";
+                return (List<Book>)db.Query<Book>(sqlString);
+            }
         }
 
         public int AddNewBook(Book name)

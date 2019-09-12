@@ -11,6 +11,16 @@ namespace bookish.Data.SQLQueries
     {
         private readonly string connectionString;
 
+        /* public static List<BooksAuthors> QueryAuthor(string selectStatement, string whereStatement, string orderByStatement)
+        {
+            using (var db =
+                new SqlConnection(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString))
+            {
+                string sqlString = "SELECT " + selectStatement + " FROM [bookish].[dbo].[Books-Authors] " + whereStatement +
+                                   orderByStatement;
+                return (List<BooksAuthors>)db.Query<BooksAuthors>(sqlString);
+            }
+        }*/
         public SqlAuthorQueries(string connectionString)
         {
             this.connectionString = connectionString;

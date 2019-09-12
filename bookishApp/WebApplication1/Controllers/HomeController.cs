@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using bookish.Data;
 
 namespace bookish.web.Controllers
 {
@@ -19,7 +20,9 @@ namespace bookish.web.Controllers
         public ActionResult Catalogue()
         {
             //todo: add author
-            var books = bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC");
+            var queries = Queries.SetConnectionString();
+
+            var books = queries.GetAllBooks();
 
             return View(books);
         }

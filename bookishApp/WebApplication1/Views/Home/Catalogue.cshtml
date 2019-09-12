@@ -13,6 +13,6 @@ ORDER BY [BookName] ASC-->
 <ul>
     @foreach (var book in Model)
     {
-        <li>@Html.ActionLink(book.BookName, $"BookInfoPage", "Book", new {id = book.BookName}, new {target="_top"})</li>
+        <li>@Html.ActionLink(book.BookName, $"BookInfoPage", "Book", new {id = book.BookName}, null)</li>
     }
 </ul>
