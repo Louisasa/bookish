@@ -11,8 +11,8 @@ FROM [bookish].[dbo].[Books]
 ORDER BY [BookName] ASC-->
 
 <ul>
-    @foreach (var person in ViewBag.data)
+    @foreach (var book in ViewBag.data)
     {
-        <li>@person</li>
+    <li>@Html.ActionLink((string)book.BookName, "Index", "Home")</li>
     }
 </ul>

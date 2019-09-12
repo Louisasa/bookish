@@ -18,6 +18,7 @@ namespace bookish.web.Controllers
 
         public ActionResult Catalogue()
         {
+            //todo: add author
             ViewBag.data = bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC");
 
             return View();
