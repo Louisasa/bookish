@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Book Info Page";
+}
+
+<div class="jumbotron">
+    <h1>Books Info Page</h1>
+    <p class="lead">Need to add book info here. </p>
+</div>
+
+<ul>
+    @foreach (var book in ViewBag.data)
+    {
+        <li>@book.AuthorID</li>
+    }
+</ul>

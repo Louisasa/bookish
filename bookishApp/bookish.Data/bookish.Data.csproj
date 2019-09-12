@@ -47,15 +47,20 @@
   <ItemGroup>
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
-    <Compile Include="Books-Authors.cs" />
+    <Compile Include="BooksAuthors.cs" />
     <Compile Include="CheckOuts.cs" />
+    <Compile Include="Interfaces\IAuthorQueries .cs" />
+    <Compile Include="Interfaces\IBookQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries.cs" />
+    <Compile Include="SQLQueries\SqlAuthorQueries.cs" />
+    <Compile Include="SQLQueries\SqlBookQueries.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

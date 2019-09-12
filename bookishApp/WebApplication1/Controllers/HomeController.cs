@@ -19,9 +19,14 @@ namespace bookish.web.Controllers
         public ActionResult Catalogue()
         {
             //todo: add author
-            ViewBag.data = bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC");
+            var books = bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC");
 
-            return View();
+            return View(books);
+        }
+
+        public ActionResult BookInfoPage(object bookname)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
