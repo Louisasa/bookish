@@ -10,6 +10,7 @@ namespace bookish.Data.Interfaces
     {
         List<Book> GetBooksByName(string name);
         List<Book> GetAllBooks();
+        AuthorsWorks GetBooksByAuthorName(string name);
         int AddNewBook(Book name);
     }
 }
