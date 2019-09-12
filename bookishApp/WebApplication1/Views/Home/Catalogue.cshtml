@@ -1,8 +1,8 @@
-﻿@{
+﻿@model List<bookish.Data.Book>
+@{
     ViewBag.Title = "Catalogue";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
 <!-- todo: call database here -->
 
@@ -10,12 +10,9 @@
 FROM [bookish].[dbo].[Books]
 ORDER BY [BookName] ASC-->
 
-<div>
-    @{
-        foreach (var book in bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC"))
-        {
-            book.ToString();
-        }
-        
+<ul>
+    @foreach (var person in ViewBag.data)
+    {
+        <li>@person</li>
     }
-</div>
+</ul>

@@ -18,7 +18,7 @@ namespace bookish.web.Controllers
 
         public ActionResult Catalogue()
         {
-            ViewBag.Message = "Your catalogue page.";
+            ViewBag.data = bookish.Data.Queries.QueryBooks("*", "", "ORDER BY [BookName] ASC");
 
             return View();
         }
