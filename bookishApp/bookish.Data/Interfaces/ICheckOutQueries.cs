@@ -8,7 +8,7 @@ namespace bookish.Data.Interfaces
 {
     public interface ICheckOutQueries
     {
-        List<CheckOuts> GetCheckOutsByBookID(int id);
+        List<CheckOutsBooks> GetCheckOutsByBookID(int id);
         List<CheckOuts> GetCheckOutsByUserID(int id);
         List<CheckOuts> GetAllCheckOuts();
     }

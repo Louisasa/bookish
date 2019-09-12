@@ -48,6 +48,7 @@
     <Compile Include="Author.cs" />
     <Compile Include="Book.cs" />
     <Compile Include="BooksAuthors.cs" />
+    <Compile Include="CheckOutsBooks.cs" />
     <Compile Include="CheckOuts.cs" />
     <Compile Include="Interfaces\IUserQueries.cs" />
     <Compile Include="Interfaces\IAuthorQueries .cs" />

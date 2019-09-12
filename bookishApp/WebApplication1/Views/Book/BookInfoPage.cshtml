@@ -1,14 +1,26 @@
-﻿@{
-    ViewBag.Title = "Book Info Page";
+﻿@model bookish.web.Models.BookInfoModel
+
+@{
+    ViewBag.Title = @Model.BookName;
 }
 
-<div class="jumbotron">
-    <h1>Books Info Page</h1>
-    <p class="lead">Need to add book info here. </p>
-</div>
+    <div class="jumbotron">
+        <h1>@Model.BookName</h1>
+        <p>
+            Total Copies:
+            @Model.BookCopies
+        </p>
+        <p>
+            Copies Available:
+            @{
+                var modelBookCopies = Model.BookCopies - Model.Checkouts.Count;
+            }
+            @modelBookCopies
+        </p>
+    </div>
 
 <ul>
-    @foreach (var book in Model)
+    @foreach (var book in Model.Checkouts)
     {
         <li>@book</li>
     }
