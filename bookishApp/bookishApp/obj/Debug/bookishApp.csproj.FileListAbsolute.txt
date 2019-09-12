@@ -21,3 +21,8 @@ C:\Work\Training\Bookish\bookishApp\bookishApp\bin\Debug\secret.config
 C:\Work\Training\Bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.dll
 C:\Work\Training\Bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.pdb
 C:\Work\Training\Bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.dll.config
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\secret.config
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.dll
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.pdb
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\bin\Debug\bookish.Data.dll.config
+C:\Users\LouNas\c#bootcamp\bookish\bookishApp\bookishApp\obj\Debug\bookishApp.csprojAssemblyReference.cache
