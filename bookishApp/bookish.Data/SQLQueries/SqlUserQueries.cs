@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using bookish.Data.Interfaces;
+using Dapper;
 
 namespace bookish.Data.SQLQueries
 {
-    public interface IUserQueries
-    {
-        List<Book> GetBooksByUserID(string name);
-        List<Users> GetUserIDByLogin(string name);
-        List<Users> GetUsernameByBook(string name);
-    }
-
-    class UserQueries : IUserQueries
+    class SqlUserQueries : IUserQueries
     {
         private readonly string connectionString;
 
-        public UserQueries(string connectionString)
+        public SqlUserQueries(string connectionString)
         {
             this.connectionString = connectionString;
         }
 
-        public List<Book> GetBooksByUserID(string name)
+        public List<Users> GetBookIdByUserID(string name)
         {
-            throw new System.NotImplementedException();
+            using (var db = new SqlConnection(connectionString))
+            {
+                string sqlString = "SELECT bookid, DueDate FROM dbo.Users where u.id = @userid";
+                return  db.Query<Users>(sqlString, new { userid = name }).ToList();
+            }
         }
+
         public List<Users> GetUserIDByLogin(string name)
         {
             throw new System.NotImplementedException();

@@ -57,7 +57,7 @@
     <Compile Include="Interfaces\IBookQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries.cs" />
-    <Compile Include="SQLQueries\UserQueries.cs" />
+    <Compile Include="SQLQueries\SqlUserQueries.cs" />
     <Compile Include="SQLQueries\SqlAuthorQueries.cs" />
     <Compile Include="SQLQueries\SqlCheckOutQueries.cs" />
     <Compile Include="SQLQueries\SqlBookQueries.cs" />
