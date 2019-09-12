@@ -50,6 +50,7 @@
     <Compile Include="BooksAuthors.cs" />
     <Compile Include="CheckOutsBooks.cs" />
     <Compile Include="CheckOuts.cs" />
+    <Compile Include="AuthorsWorks.cs" />
     <Compile Include="Interfaces\IUserQueries.cs" />
     <Compile Include="Interfaces\IAuthorQueries .cs" />
     <Compile Include="Interfaces\ICheckOutQueries.cs" />

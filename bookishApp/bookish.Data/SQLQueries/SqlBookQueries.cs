@@ -23,7 +23,7 @@ namespace bookish.Data.SQLQueries
             using (var db = new SqlConnection(connectionString))
             {
                 string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books] where BookName = @bookName";
-                return (List<Book>)db.Query<Book>(sqlString, new { bookName = name });
+                return db.Query<Book>(sqlString, new { bookName = name }).ToList();
             }
         }
 
@@ -32,20 +32,20 @@ namespace bookish.Data.SQLQueries
             using (var db = new SqlConnection(connectionString))
             {
                 string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books]";
-                return (List<Book>)db.Query<Book>(sqlString);
+                return db.Query<Book>(sqlString).ToList();
             }
         }
-        public List<BooksAuthors> GetBooksByAuthorName(string name)
+        public AuthorsWorks GetBooksByAuthorName(string name)
         {
             using (var db = new SqlConnection(connectionString))
             {
-                //string sqlString = "SELECT Id, AuthorName FROM [bookish].[dbo].[Authors] WHERE AuthorName = @authorName";
-                //db.Query<Author>(sqlString , new { authorName = name});
-                string searchString =
-                    "SELECT AuthorName, BookId FROM [bookish].[dbo].[Authors] a INNER JOIN [bookish].[dbo].[BooksAuthors] ba ON a.AuthorId = ba.AuthorId WHERE a.AuthorName = @authorBane";
-                string searchone = "SELECT BookName, AuthorName FROM table1 INNER JOIN [bookish].[dbo].[BooksAuthors]";
-
-                return (List<BooksAuthors>)db.Query<Book>(searchString, new { authorName = name });
+                var searchOne = "SELECT AuthorName, BookId FROM [bookish].[dbo].[Authors] a INNER JOIN [bookish].[dbo].[BooksAuthors] ba ON a.AuthorId = ba.AuthorId WHERE a.AuthorName = @authorBane";
+                var searchTwo = $"SELECT BookName FROM ({searchOne}) d INNER JOIN [bookish].[dbo].[Books] b ON d.BookId = ba.BookId";
+                var authorWork = new AuthorsWorks
+                {
+                    AuthorName = name, Books = db.Query<Book>(searchOne, new {authorName = name}).ToList()
+                };
+                return authorWork;
             }
         }
 
