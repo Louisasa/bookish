@@ -1,12 +1,17 @@
-﻿@{
+﻿@model List<bookish.web.Models.BookInfoModel>
+
+@{
     ViewBag.Title = "Checked Out Books";
 }
 
 <div class="jumbotron">
-    <h1>Checkedoutbooks</h1>
+    <h1>Checked out books</h1>
     
 </div>
 
 <ul>
-    @Model
+    @foreach (var book in Model)
+    {
+        <li>@book.BookName is due @book.Checkouts.SingleOrDefault().DueDate.ToShortDateString()</li>
+    }
 </ul>

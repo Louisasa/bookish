@@ -29,7 +29,11 @@ namespace bookish.Data.SQLQueries
 
         public List<CheckOuts> GetCheckOutsByUserID(int name)
         {
-            throw new System.NotImplementedException();
+            using (var db = new SqlConnection(connectionString))
+            {
+                string sqlString = "SELECT bookid, DueDate FROM dbo.CheckOuts where id = @userid";
+                return db.Query<CheckOuts>(sqlString, new { userid = name }).ToList();
+            }
         }
 
         public List<CheckOuts> GetAllCheckOuts()

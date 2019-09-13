@@ -18,18 +18,13 @@ namespace bookish.Data.SQLQueries
             this.connectionString = connectionString;
         }
 
-        public List<Users> GetBookIdByUserID(string name)
+        public int GetUserIDByEmail(string name)
         {
             using (var db = new SqlConnection(connectionString))
             {
-                string sqlString = "SELECT bookid, DueDate FROM dbo.Users where u.id = @userid";
-                return  db.Query<Users>(sqlString, new { userid = name }).ToList();
+                string sqlString = "SELECT id FROM dbo.Users where Email = @email";
+                return db.Query<int>(sqlString, new { email = name }).SingleOrDefault();
             }
-        }
-
-        public List<Users> GetUserIDByLogin(string name)
-        {
-            throw new System.NotImplementedException();
         }
         public List<Users> GetUsernameByBook(string name)
         {

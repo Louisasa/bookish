@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using bookish.Data;
 using bookish.web.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -78,9 +80,31 @@ namespace bookish.web.Controllers
         public ActionResult CheckedOutBooks()
         {
             var userId = User.Identity.GetUserId();
-            Console.WriteLine(userId);
+            var userEmail = UserManager.GetEmail(userId);
+            var listOfBooks = new List<BookInfoModel>();
 
-            return View();
+            if (userEmail != null)
+            {
+                var userQueries = Queries.SetConnectionStringForUsers();
+                var checkoutQueries = Queries.SetConnectionStringForCheckOuts();
+                var bookQueries = Queries.SetConnectionStringForBooks();
+
+                var userDBID = userQueries.GetUserIDByEmail(userEmail);
+                var userBooks = checkoutQueries.GetCheckOutsByUserID(userDBID);
+
+                foreach (var book in userBooks)
+                {
+                    var bookInfo = bookQueries.GetBooksById(book.BookID).SingleOrDefault();
+                    var bookInfoModel = new BookInfoModel
+                    {
+                        BookName = bookInfo.BookName,
+                        Checkouts = userBooks.Select(c => new CheckoutViewModel
+                            { DueDate = c.DueDate }).ToList()
+                    };
+                    listOfBooks.Add(bookInfoModel);
+                }
+            }
+            return View(listOfBooks);
         }
 
         public ActionResult Search(Search search)
