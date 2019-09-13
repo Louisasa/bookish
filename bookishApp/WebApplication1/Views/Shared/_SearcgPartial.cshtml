@@ -1,0 +1,9 @@
+﻿@model bookish.web.Controllers.Search
+
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { id = "searchbar", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        
+        <input type="text" class="tftextinput" name="searchString" size="21" maxlength="120">
+        <input type="submit" value="search" class="tfbutton">
+    }

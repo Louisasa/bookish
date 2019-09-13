@@ -17,6 +17,11 @@ namespace bookish.web.Controllers
             return View();
         }
 
+        public ActionResult Search(Search search)
+        {
+            return View();
+        }
+
         public ActionResult Catalogue()
         {
             //todo: add author
@@ -26,5 +31,10 @@ namespace bookish.web.Controllers
 
             return View(books);
         }
+    }
+
+    public class Search
+    {
+        public string searchString { get; set; }
     }
 }
