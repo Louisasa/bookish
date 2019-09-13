@@ -74,6 +74,13 @@ namespace bookish.web.Controllers
             return View(model);
         }
 
+        public ActionResult CheckedOutBooks()
+        {
+            var userId = User.Identity.GetUserId();
+
+            return View();
+        }
+
         //
         // POST: /Manage/RemoveLogin
         [HttpPost]
