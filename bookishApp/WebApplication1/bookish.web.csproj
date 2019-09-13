@@ -181,6 +181,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <None Include="Views\Manage\AddABook.cshtml" />
     <None Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Shared\_SearchPartial.cshtml" />
   </ItemGroup>

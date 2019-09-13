@@ -8,8 +8,7 @@ namespace bookish.Data.Interfaces
 {
     public interface IUserQueries
     {
-        List<Users> GetBookIdByUserID(string name);
-        List<Users> GetUserIDByLogin(string name);
+        int GetUserIDByEmail(string name);
         List<Users> GetUsernameByBook(string name);
     }
 }
