@@ -40,7 +40,7 @@ namespace bookish.Data.SQLQueries
         {
             using (var db = new SqlConnection(connectionString))
             {
-                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books]";
+                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [dbo].[Books]";
                 return db.Query<Book>(sqlString).ToList();
             }
         }
