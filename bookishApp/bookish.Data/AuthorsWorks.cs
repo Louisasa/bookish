@@ -8,7 +8,7 @@ namespace bookish.Data
 {
     public class AuthorsWorks
     {
-        public string AuthorName { get; set; }
+        public List<Author> Authors { get; set; }
         public List<Book> Books { get; set; }
 
     }

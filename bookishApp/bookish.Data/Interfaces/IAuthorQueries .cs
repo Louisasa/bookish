@@ -8,7 +8,5 @@ namespace bookish.Data.Interfaces
 {
     public interface IAuthorQueries
     {
-        List<BooksAuthors> GetAuthorIDByBookName(string name);
-        List<Author> GetAuthorNameByAuthorID(string name);
     }
 }

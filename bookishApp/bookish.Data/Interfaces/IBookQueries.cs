@@ -13,5 +13,6 @@ namespace bookish.Data.Interfaces
         List<Book> GetAllBooks();
         AuthorsWorks GetBooksByAuthorName(string name);
         int AddNewBook(Book name);
+        AuthorsWorks GetAuthorByBookName(string searchSearchString);
     }
 }

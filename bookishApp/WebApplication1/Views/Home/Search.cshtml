@@ -1,4 +1,5 @@
-﻿@model List<bookish.Data.SQLQueries.SqlBookQueries>
+﻿@using bookish.web.Models
+@model bookish.web.Models.AuthorWorksInfo
 @{
     ViewBag.Title = "Search Results";
 }
@@ -9,3 +10,21 @@
 FROM [bookish].[dbo].[Books]
 ORDER BY [BookName] ASC-->
 
+<ul>
+    @if (Model.Books.Count >= Model.Authors.Count)
+    {
+
+        foreach (var book in Model.Books)
+        {
+            <li>@Html.ActionLink(book.BookName, $"BookInfoPage", "Book", new {id = book.BookName}, null) - @Model.Authors</li>
+        }
+    }
+    @if (Model.Books.Count < Model.Authors.Count)
+    {
+        foreach (var author in Model.Authors)
+        {
+            <li>@Html.ActionLink(author.AuthorName, $"BookInfoPage", "Book", new {id = author.AuthorName}, null) - @Model.Books</li>
+        }
+    }
+
+</ul>

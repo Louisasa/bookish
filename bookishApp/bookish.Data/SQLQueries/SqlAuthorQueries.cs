@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using bookish.Data.Interfaces;
 using Dapper;
@@ -26,14 +27,5 @@ namespace bookish.Data.SQLQueries
             this.connectionString = connectionString;
         }
 
-        public List<BooksAuthors> GetAuthorIDByBookName(string name)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public List<Author> GetAuthorNameByAuthorID(string name)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

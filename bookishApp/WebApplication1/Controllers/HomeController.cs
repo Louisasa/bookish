@@ -1,6 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using bookish.Data;
-
+using bookish.web.Models;
 namespace bookish.web.Controllers
 {
     public class HomeController : Controller
@@ -20,8 +21,26 @@ namespace bookish.web.Controllers
         public ActionResult Search(Search search)
         {
             var queries = Queries.SetConnectionStringForBooks();
-            var books = queries.GetBooksByAuthorName(search.searchString);
-            return View(books);
+            var authorWorks = queries.GetBooksByAuthorName(search.searchString);
+            if (authorWorks.Books.Count != 0)
+            {
+                var authorworksInfo = new AuthorWorksInfo
+                {
+                    Authors = authorWorks.Authors,
+                    Books = authorWorks.Books
+                };
+                return View(authorworksInfo);
+            }
+            else
+            {
+                var books = queries.GetAuthorByBookName(search.searchString);
+                var authorworksInfo = new AuthorWorksInfo()
+                {
+                    Authors = books.Authors,
+                    Books = books.Books
+                };
+                return View(authorworksInfo);
+            }
         }
 
         public ActionResult Catalogue()

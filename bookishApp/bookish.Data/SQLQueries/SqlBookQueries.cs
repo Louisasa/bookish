@@ -22,7 +22,7 @@ namespace bookish.Data.SQLQueries
         {
             using (var db = new SqlConnection(connectionString))
             {
-                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books] where BookName = @bookName";
+                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [dbo].[Books] where BookName = @bookName";
                 return db.Query<Book>(sqlString, new { bookName = name }).ToList();
             }
         }
@@ -52,7 +52,25 @@ namespace bookish.Data.SQLQueries
                 var searchTwo = $"SELECT Id, BookName, ISBN, BookCopies FROM ({searchOne}) d INNER JOIN [dbo].[Books] b ON d.BookId = b.Id";
                 return new AuthorsWorks
                 {
-                    AuthorName = name, Books = db.Query<Book>(searchTwo, new {authorName = name}).ToList()
+                    Authors = new List<Author>{new Author() {AuthorName = name}}, Books = db.Query<Book>(searchTwo, new {authorName = name}).ToList()
+                };
+            }
+        }
+        public AuthorsWorks GetAuthorByBookName(string name)
+        {
+            using (var db = new SqlConnection(connectionString))
+            {
+                var searchOne = "SELECT AuthorId, BookId FROM [dbo].[Books] b INNER JOIN [dbo].[Books-Authors] ba ON b.ID = ba.bookID WHERE b.BookName = @bookName";
+                var searchTwo = $"SELECT BookId, AuthorName FROM ({searchOne}) d INNER JOIN [dbo].[Authors] a ON d.BookId = a.Id";
+                return new AuthorsWorks
+                {
+                    Authors = db.Query<Author>(searchTwo, new { bookName = name }).ToList(),
+                    Books = new List<Book> {
+                        new Book()
+                        {
+                            BookName = name
+                        }
+                    }
                 };
             }
         }
