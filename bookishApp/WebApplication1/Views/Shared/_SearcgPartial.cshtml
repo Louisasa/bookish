@@ -1,6 +1,4 @@
-﻿@model bookish.web.Controllers.Search
-
-    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { id = "searchbar", @class = "navbar-right" }))
+﻿    @using (Html.BeginForm("Search", "Home", FormMethod.Post, new { id = "searchbar", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
         

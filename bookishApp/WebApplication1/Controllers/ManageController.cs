@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -77,7 +78,13 @@ namespace bookish.web.Controllers
         public ActionResult CheckedOutBooks()
         {
             var userId = User.Identity.GetUserId();
+            Console.WriteLine(userId);
 
+            return View();
+        }
+
+        public ActionResult Search(Search search)
+        {
             return View();
         }
 
