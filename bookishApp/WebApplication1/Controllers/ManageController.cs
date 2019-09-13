@@ -107,7 +107,7 @@ namespace bookish.web.Controllers
             return View(listOfBooks);
         }
 
-        public ActionResult Search(Search search)
+        public ActionResult AddABook()
         {
             return View();
         }

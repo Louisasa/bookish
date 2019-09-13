@@ -1,0 +1,52 @@
+﻿@{
+ViewBag.Title = "Add a book";
+}
+
+@{
+    if (IsPost) {
+        string BookName = Request.Form["BookName"];
+        string AuthorName = Request.Form["AuthorName"];
+        string ISBN = Request.Form["ISBN"];
+        int Copies = Request.Form["Copies"].AsInt();
+
+        <text>
+            You entered: <br />
+            BookName: @BookName <br />
+            AuthorName: @AuthorName <br />
+            ISBN: @ISBN <br />
+            Copies: @Copies <br />
+        </text>
+    }
+}
+
+<div class="jumbotron">
+    <h1>Add a book</h1>
+    <p>If the book you are adding has multiple authors, please separate by a comma.</p>
+    
+</div>
+
+<form method="post" >
+    <fieldset>
+        <legend>Add Customer</legend>
+        <div>
+            <label for="BookName">Book Name:</label>
+            <input type="text" name="BookName" value="" />
+        </div>
+        <div>
+            <label for="AuthorName">Author Name:</label>
+            <input type="text" name="AuthorName" value="" />
+        </div>
+        <div>
+            <label for="ISBN">ISBN:</label>
+            <input type="text" name="ISBN" value="" />
+        </div>
+        <div>
+            <label for="Copies">Copies:</label>
+            <input type="text" name="Copies" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Submit" class="submit" />
+        </div>
+    </fieldset>
+</form>
