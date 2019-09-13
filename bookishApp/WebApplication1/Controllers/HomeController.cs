@@ -19,7 +19,9 @@ namespace bookish.web.Controllers
 
         public ActionResult Search(Search search)
         {
-            return View();
+            var queries = Queries.SetConnectionStringForBooks();
+            var books = queries.GetBooksByAuthorName(search.searchString);
+            return View(books);
         }
 
         public ActionResult Catalogue()

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace bookish.web.Views.Home
-{
-    public class Class1
-    {
-    }
+﻿@model List<bookish.Data.SQLQueries.SqlBookQueries>
+@{
+    ViewBag.Title = "Search Results";
 }
+<h2>@ViewBag.Title</h2>
+
+<!-- todo: call database here -->
+<!--SELECT *
+FROM [bookish].[dbo].[Books]
+ORDER BY [BookName] ASC-->
+
