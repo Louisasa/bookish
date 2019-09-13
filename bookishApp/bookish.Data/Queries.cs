@@ -19,5 +19,10 @@ namespace bookish.Data
         {
             return new SqlCheckOutQueries(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString);
         }
-    }
+
+        public static IUserQueries SetConnectionStringForUsers()
+        {
+            return new SqlUserQueries(ConfigurationManager.ConnectionStrings["BookishConnection"].ConnectionString);
+        }
+}
 }

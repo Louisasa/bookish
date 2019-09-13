@@ -27,6 +27,15 @@ namespace bookish.Data.SQLQueries
             }
         }
 
+        public List<Book> GetBooksById(int name)
+        {
+            using (var db = new SqlConnection(connectionString))
+            {
+                string sqlString = "SELECT Id, BookName, ISBN, BookCopies FROM [bookish].[dbo].[Books] where Id = @bookName";
+                return db.Query<Book>(sqlString, new { bookName = name}).ToList();
+            }
+        }
+
         public List<Book> GetAllBooks()
         {
             using (var db = new SqlConnection(connectionString))
